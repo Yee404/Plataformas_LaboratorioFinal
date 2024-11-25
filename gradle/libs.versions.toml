@@ -14,7 +14,7 @@ ktor = "2.3.3"
 room = "2.5.1"
 coil = "2.4.0"
 datastore = "1.0.0"
-splashscreen = "1.0.1"
+splashscreen = "1.1.0"
 firebaseBom = "32.3.1"
 firebaseAuth = "21.5.0"
 serialization = "1.9.0"
@@ -41,9 +41,13 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
 
 #ktor
-ktor-client-core = "io.ktor:ktor-client-core:2.3.3"
 ktor-client-android = "io.ktor:ktor-client-android:2.3.3"
-ktor-client-logging = "io.ktor:ktor-client-logging:2.3.3"
+ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
+ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktor" }
+ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization" }
+
 
 #room
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
@@ -59,8 +63,6 @@ androidx-splashscreen = { group = "androidx.core", name = "splashscreen", versio
 #firebase
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
-
-kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization" }
 
 #navigation
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }

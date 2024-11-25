@@ -12,23 +12,31 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.cryptotracker.ui.theme.CryptoTrackerTheme
+import com.example.cryptotracker.data.local.AppDatabase
+import com.example.cryptotracker.data.remote.ApiService
+import com.example.cryptotracker.data.repository.AssetRepository
+import com.example.cryptotracker.ui.screens.list.AssetListScreen
+import io.ktor.client.HttpClient
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
+        // Instancia del ApiService y AppDatabase (pendiente)
+        //val apiService = ApiService(httpClient) //cliente Ktor configurado
+        val database = AppDatabase.getInstance(this)
+        val assetDao = database.assetDao()
+        //val repository = AssetRepository(apiService, assetDao)
+
         setContent {
-            CryptoTrackerTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+            //AssetListScreen(repository = repository, onAssetClick = { asset ->
+
             }
         }
     }
-}
+
+
+// pendiente
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {

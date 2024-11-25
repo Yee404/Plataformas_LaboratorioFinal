@@ -10,8 +10,7 @@ import io.ktor.client.plugins.logging.Logger
 import io.ktor.client.plugins.logging.Logging
 import io.ktor.http.ContentType
 import io.ktor.http.contentType
-import io.ktor.serialization.kotlinx.json.json
-import kotlinx.serialization.json.Json
+
 
 object HttpClientFactory {
     fun create(): HttpClient {
@@ -23,13 +22,7 @@ object HttpClientFactory {
             }
 
             // Configuración de Content Negotiation para JSON
-            install(ContentNegotiation) {
-                json(
-                    Json {
-                        ignoreUnknownKeys = true // Ignora campos desconocidos en JSON
-                    }
-                )
-            }
+
 
             // Configuración predeterminada para Content-Type
             defaultRequest {
