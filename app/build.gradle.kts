@@ -92,6 +92,10 @@ dependencies {
     implementation(libs.ktor.client.android)
     implementation(libs.ktor.client.logging)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.ktor.client.cio)
+    //implementation(libs.ktor.client.content-negotation)
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.3")
+
 
     // Room
     implementation(libs.androidx.room.runtime)
